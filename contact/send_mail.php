@@ -1,7 +1,7 @@
 <?php
 require 'PHPMailer/PHPMailerAutoload.php';
 
-$host = 'https://api.sendgrid.com/';
+$host = 'smtp.sendgrid.net';
 
 $username = 'jasper.ong4@gmail.com.com';
 
