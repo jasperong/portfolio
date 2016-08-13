@@ -1,11 +1,11 @@
 <?php
 require 'PHPMailer/PHPMailerAutoload.php';
 
-$host = 'YOUR_HOST';
+$host = 'smtp.gmail.com';
 
-$username = 'USERNAME@DOMAIN.com';
+$username = 'jasper.ong4@gmail.com.com';
 
-$password = 'YOUR_PASSWORD';
+$password = 'javeong666';
 
 $send = false;
 
@@ -27,11 +27,11 @@ $services = '';
 if ( isset($_POST['services']) AND count($_POST['services']) > 0)
 {
     $index = 1;
-    
+
     foreach ( $_POST['services'] as $val)
     {
         $services .= ( $index == count($_POST['services'])) ? $val : $val . ', ';
-        
+
         $index++;
     }
 }
@@ -52,10 +52,10 @@ else
 
 $htmlmessage = <<<MESSAGE
     <html>
-    	<head>
+      <head>
             <title>$subject</title>
-    	</head>
-        
+      </head>
+
         <body>
             <p><strong>Name:</strong> $name</p>
             <p><strong>Email:</strong> $email</p>
@@ -67,7 +67,7 @@ $htmlmessage = <<<MESSAGE
 MESSAGE;
 
 $mail = new PHPMailer;
-        
+
 $mail->isSMTP();
 // $mail->SMTPSecure = 'ssl';
 $mail->SMTPAuth = TRUE;
@@ -90,7 +90,7 @@ $mail->Subject = $subject;
 $mail->Body    = $htmlmessage;
 
 // Send the message
-if ( $mail->send()) 
+if ( $mail->send())
 {
     $send = true;
 }
